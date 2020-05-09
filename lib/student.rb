@@ -70,5 +70,5 @@ class Student
       FROM students
       WHERE name = ?
     SQL
-    
+
 end
