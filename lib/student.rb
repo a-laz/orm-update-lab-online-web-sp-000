@@ -71,6 +71,8 @@ class Student
       WHERE name = ?
       LIMIT 1
     SQL
-    DB[:conn].execute(sql, self.name)
+    DB[:conn].execute(sql, self.name).map do |row|
+      self.new_from_db(row)
+    end.first
   end
 end
